@@ -1,6 +1,8 @@
-# Awesome-Identity-User-Profile-Administration
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Identity & Access Governance Banner" width="100%">
+</p>
 
-# Awesome-Identity-User-Profile-Administration
+# Awesome Identity User Profile Administration & Governance
 
 ## Top Identity Management & Access Governance
 

@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%" style="background:#090d16; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bg-glow-1" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#090d16" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="bg-glow-2" cx="80%" cy="70%" r="55%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#090d16" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="bg-glow-3" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#090d16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Linear Gradients for UI Elements -->
+    <linearGradient id="primary-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="50%" stop-color="#a78bfa" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+
+    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+
+    <linearGradient id="pill-stroke" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.3" />
+    </linearGradient>
+
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.3" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.45" />
+    </pattern>
+
+    <!-- CSS Animations -->
+    <style>
+      @keyframes pulseSlow {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.08); opacity: 1; }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes scanline {
+        0% { stroke-dashoffset: 400; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes beaconRing {
+        0% { r: 12px; opacity: 0.9; }
+        100% { r: 38px; opacity: 0; }
+      }
+      @keyframes orbPulse {
+        0%, 100% { transform: scale(1); opacity: 0.4; }
+        50% { transform: scale(1.2); opacity: 0.7; }
+      }
+      @keyframes streamDot {
+        0% { offset-distance: 0%; opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { offset-distance: 100%; opacity: 0; }
+      }
+      .animated-pulse {
+        animation: pulseSlow 5s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .animated-float {
+        animation: floatSlow 6s ease-in-out infinite;
+      }
+      .animated-float-delay {
+        animation: floatSlow 7s ease-in-out infinite 1.5s;
+      }
+      .beacon-circle {
+        animation: beaconRing 2.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        transform-origin: 600px 72px;
+      }
+      .scan-path {
+        stroke-dasharray: 8 6;
+        animation: scanline 16s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base & Grids -->
+  <rect width="100%" height="100%" fill="#0a0f1d" />
+  <rect width="100%" height="100%" fill="url(#bg-glow-1)" />
+  <rect width="100%" height="100%" fill="url(#bg-glow-2)" />
+  <rect width="100%" height="100%" fill="url(#bg-glow-3)" />
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Outer Rounded Border Glow -->
+  <rect x="15" y="15" width="1170" height="390" rx="20" fill="none" stroke="url(#border-glow)" stroke-width="1.5" />
+
+  <!-- Dynamic Background Connection Lines & Nodes (Subtle, strictly in deep background) -->
+  <g opacity="0.45" stroke="#38bdf8" stroke-width="1">
+    <path d="M 80 120 L 220 180 L 150 290 L 80 120" fill="none" class="scan-path" />
+    <path d="M 1120 120 L 980 180 L 1050 290 L 1120 120" fill="none" class="scan-path" />
+    <line x1="220" y1="180" x2="330" y2="210" class="scan-path" stroke="#818cf8" />
+    <line x1="980" y1="180" x2="870" y2="210" class="scan-path" stroke="#818cf8" />
+    <!-- Background Ambient Nodes -->
+    <circle cx="80" cy="120" r="3.5" fill="#38bdf8" />
+    <circle cx="220" cy="180" r="4.5" fill="#818cf8" />
+    <circle cx="150" cy="290" r="3" fill="#a855f7" />
+    <circle cx="1120" cy="120" r="3.5" fill="#38bdf8" />
+    <circle cx="980" cy="180" r="4.5" fill="#818cf8" />
+    <circle cx="1050" cy="290" r="3" fill="#a855f7" />
+  </g>
+
+  <!-- Subtle Dynamic Circuit Flow near Bottom -->
+  <path d="M 100 375 L 300 375 L 330 355 L 870 355 L 900 375 L 1100 375" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.3" class="scan-path" />
+
+  <!-- Central Security Emblem / Shield (Behind & Above Title, Distinct) -->
+  <g class="animated-float" transform="translate(600, 75)">
+    <!-- Expanding Beacon Rings -->
+    <circle cx="0" cy="0" r="24" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.6">
+      <animate attributeName="r" values="20;46" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;0" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#818cf8" stroke-width="1" opacity="0.5">
+      <animate attributeName="r" values="16;38" dur="3s" begin="1.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Shield Hexagon Glow Base -->
+    <polygon points="0,-28 24,-14 24,14 0,28 -24,14 -24,-14" fill="#0f172a" stroke="url(#shield-grad)" stroke-width="2.5" />
+    
+    <!-- Identity / Security Icon (Lock & Keyhole) -->
+    <path d="M -8 -2 L -8 -8 C -8 -13 8 -13 8 -8 L 8 -2" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />
+    <rect x="-10" y="-2" width="20" height="16" rx="3" fill="url(#shield-grad)" />
+    <circle cx="0" cy="5" r="2.5" fill="#0f172a" />
+    <line x1="0" y1="6.5" x2="0" y2="10" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <!-- FOREGROUND: Category Tag Badge -->
+  <g transform="translate(600, 142)">
+    <rect x="-160" y="-14" width="320" height="28" rx="14" fill="#1e1b4b" fill-opacity="0.85" stroke="#6366f1" stroke-width="1.2" />
+    <circle cx="-138" cy="0" r="4.5" fill="#10b981">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="-124" y="4.5" font-size="11.5" font-weight="700" fill="#a5b4fc" letter-spacing="1.5">ENTERPRISE IDENTITY &amp; GOVERNANCE</text>
+  </g>
+
+  <!-- FOREGROUND: Main Title -->
+  <g transform="translate(600, 198)">
+    <text text-anchor="middle" font-size="34" font-weight="800" fill="url(#primary-grad)" letter-spacing="0.5">
+      Awesome Identity &amp; Access Governance
+    </text>
+  </g>
+
+  <!-- FOREGROUND: Subtitle -->
+  <g transform="translate(600, 236)">
+    <text text-anchor="middle" font-size="15.5" font-weight="400" fill="#cbd5e1" letter-spacing="0.2">
+      Curated Landscape of Enterprise SaaS Solutions &amp; Open-Source Projects
+    </text>
+  </g>
+
+  <!-- FOREGROUND: Description Focus Pills -->
+  <g transform="translate(600, 268)">
+    <text text-anchor="middle" font-size="12.5" font-weight="500" fill="#94a3b8" letter-spacing="0.8">
+      IGA • Access Certifications • Identity Lifecycle • RBAC / PBAC • SoD Compliance
+    </text>
+  </g>
+
+  <!-- Dynamic Feature Pills (Floating, in foreground layer with protected coordinates) -->
+  <!-- Pill 1: Lifecycle Management -->
+  <g class="animated-float" transform="translate(190, 325)">
+    <rect x="-85" y="-18" width="170" height="36" rx="18" fill="#0f172a" fill-opacity="0.88" stroke="url(#pill-stroke)" stroke-width="1.2" />
+    <circle cx="-62" cy="0" r="4" fill="#38bdf8" />
+    <text x="-48" y="4.5" font-size="12" font-weight="600" fill="#e2e8f0">Lifecycle Engine</text>
+  </g>
+
+  <!-- Pill 2: Access Reviews -->
+  <g class="animated-float-delay" transform="translate(390, 325)">
+    <rect x="-80" y="-18" width="160" height="36" rx="18" fill="#0f172a" fill-opacity="0.88" stroke="url(#pill-stroke)" stroke-width="1.2" />
+    <circle cx="-58" cy="0" r="4" fill="#818cf8" />
+    <text x="-44" y="4.5" font-size="12" font-weight="600" fill="#e2e8f0">Access Reviews</text>
+  </g>
+
+  <!-- Pill 3: Zero Trust & Least Privilege -->
+  <g class="animated-float" transform="translate(600, 325)">
+    <rect x="-85" y="-18" width="170" height="36" rx="18" fill="#0f172a" fill-opacity="0.88" stroke="url(#pill-stroke)" stroke-width="1.2" />
+    <circle cx="-62" cy="0" r="4" fill="#34d399" />
+    <text x="-48" y="4.5" font-size="12" font-weight="600" fill="#e2e8f0">Zero Trust / SoD</text>
+  </g>
+
+  <!-- Pill 4: Role Mining & AI -->
+  <g class="animated-float-delay" transform="translate(810, 325)">
+    <rect x="-80" y="-18" width="160" height="36" rx="18" fill="#0f172a" fill-opacity="0.88" stroke="url(#pill-stroke)" stroke-width="1.2" />
+    <circle cx="-58" cy="0" r="4" fill="#c084fc" />
+    <text x="-44" y="4.5" font-size="12" font-weight="600" fill="#e2e8f0">Role Mining AI</text>
+  </g>
+
+  <!-- Pill 5: Cloud Directories -->
+  <g class="animated-float" transform="translate(1010, 325)">
+    <rect x="-85" y="-18" width="170" height="36" rx="18" fill="#0f172a" fill-opacity="0.88" stroke="url(#pill-stroke)" stroke-width="1.2" />
+    <circle cx="-62" cy="0" r="4" fill="#f472b6" />
+    <text x="-48" y="4.5" font-size="12" font-weight="600" fill="#e2e8f0">Hybrid Directory</text>
+  </g>
+</svg>
